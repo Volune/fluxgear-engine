@@ -1,7 +1,7 @@
 {
-  "name": "fluxgear-project-common",
+  "name": "fluxgear-engine",
   "version": "0.1.0",
-  "description": "Common files for all fluxgear module projects",
+  "description": "[FluxGear] Engine, handle dispatched events and maintain state",
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel -s -d lib src",
@@ -12,18 +12,18 @@
   },
   "author": "Jeremy Judeaux <jeremy.judeaux@volune.net>",
   "license": "MIT",
+  "dependencies": {
+    "fluxgear-tomessages": "~0.1.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
-    "babel-plugin-syntax-trailing-function-commas": "^6.8.0",
-    "babel-plugin-transform-class-properties": "^6.9.1",
-    "babel-plugin-transform-export-extensions": "^6.8.0",
     "babel-plugin-transform-function-bind": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
     "eslint": "^2.12.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-import-resolver-webpack": "^0.3.0",
@@ -31,6 +31,8 @@
     "eslint-plugin-jsx-a11y": "^1.4.2",
     "eslint-plugin-react": "^5.1.1",
     "mocha": "^2.5.3",
-    "must": "^0.13.1"
+    "must": "^0.13.1",
+    "must-sinon": "0.0.0",
+    "sinon": "^1.17.4"
   }
 }
