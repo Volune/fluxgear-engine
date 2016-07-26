@@ -82,6 +82,11 @@ export default function createEngine(
           type: EVENTS.CHANGE,
           oldState,
           newState: state,
+        }, {
+          getDependencies,
+          getState,
+          getApiProps,
+          dispatch,
         });
 
         callListeners(oldState, state);

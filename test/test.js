@@ -124,6 +124,21 @@ describe('engine', () => {
       engine.dispatch({});
     }).to.throw();
   });
+  it('calls dispatch with expected arguments', () => {
+    const methods = makeMethods();
+    methods.consumer.restore();
+    sinon.stub(methods, 'consumer', (event, options) => {
+      expect(options).to.have.property('getDependencies');
+      expect(options).to.have.property('getState');
+      expect(options).to.have.property('getApiProps');
+      expect(options).to.have.property('dispatch');
+    });
+    createEngine({
+      ...methods,
+      reducer: state => !state,
+    });
+    expect(methods.consumer).to.have.been.calledTwice();
+  });
   it('throws if dispatch is called synchronously in consume', () => {
     const methods = makeMethods();
     methods.consumer.restore();
